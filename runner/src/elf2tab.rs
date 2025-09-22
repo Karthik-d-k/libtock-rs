@@ -6,7 +6,7 @@ use std::process::Command;
 
 fn get_platform_architecture(platform: &str) -> Option<&'static str> {
     match platform {
-        "raspberry_pi_pico2" => Some("cortex-m33"),
+        "raspberry_pi_pico2_arm" => Some("cortex-m33"),
         "raspberry_pi_pico" | "pico_explorer_base" | "nano_rp2040_connect" => Some("cortex-m0"),
         "apollo3"
         | "clue_nrf52840"
@@ -23,7 +23,7 @@ fn get_platform_architecture(platform: &str) -> Option<&'static str> {
         | "stm32f412gdiscovery" => Some("cortex-m4"),
         "imxrt1050" | "teensy40" => Some("cortex-m7"),
         "opentitan" | "esp32_c3_devkitm_1" => Some("riscv32imc"),
-        "hifive1" | "qemu_rv32_virt" => Some("riscv32imac"),
+        "hifive1" | "qemu_rv32_virt" | "raspberry_pi_pico2_riscv" => Some("riscv32imac"),
         _ => None,
     }
 }
